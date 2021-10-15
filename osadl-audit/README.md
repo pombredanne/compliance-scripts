@@ -18,8 +18,8 @@ Included in this directory are:
 
 A few dependencies are needed:
     * tlsh (optional)
-    * requests (optional, just for downloader script)
-    * psutil
+    * requests (optional, just for downloader script) - Fedora package name: python3-requests
+    * psutil - Fedora package name: python3-psutil
     * ScanCode
     * FOSSology (uses "nomossa", the standalone Nomos scanner for people who do not want to install/use/configure all of FOSSology. This can easily be replaced by the path of the regular "nomos" if there is already an existing FOSSology installation)
 
@@ -29,11 +29,17 @@ Installing ScanCode:
 2. run the scancode program once so it self-configures
 3. add the path of the scancode program to the configuration file (example: "audit.config")
 
+Make sure that you have Git commit fea65d35a475553368db17a1d196e61a92974a74 or later (current on March 20, 2018).
+
 Creating the database:
 
 The database creation script requires PostgreSQL 9.5 or later and a recent psycopg2.
 
 1. install PostgreSQL. This is outside of the scope of this document.
+
+For standard use cases: make sure to initialize the database.
+
+# postgresql-setup --initdb
 
 2. create a database and a user, for example:
 
